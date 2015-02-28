@@ -5,14 +5,23 @@
          "stringToTimeLessState.rkt"
          "neighbors.rkt")
 
+; no living neighbors of 0,0 in empty world
 (check-equal?
  (count-neighbors (make-state '())
                   (make-point 0 0))
  0)
 
+; 0,0 is also not a neighbor of itself
 (check-equal?
- (count-neighbors (strings->state (make-point 0 1) (list " x"))
-            (make-point 0 0))
+ (count-neighbors (make-state (list (make-point 0 0)))
+                  (make-point 0 0))
+ 0)
+
+; one living neighbor of 0,0 in world with 0,1 only
+(check-equal?
+ (count-neighbors 
+  (strings->state (make-point 0 1) (list " x"))
+  (make-point 0 0))
  1)
 
 (check-equal?

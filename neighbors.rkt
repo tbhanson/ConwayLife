@@ -2,7 +2,8 @@
 
 (require "timeLessState.rkt")
 
-; in live 2 points are neighbors if one or both coordinates are distance 1 apart
+; in conway's life 2 points are neighbors if one or both coordinates are distance 1 apart
+; and no coordinate is more than 1 apart
 
 (define (distance-one? p1 p2)
   (let ((x1 (co-x p1))
