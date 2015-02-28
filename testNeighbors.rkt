@@ -17,17 +17,26 @@
                   (make-point 0 0))
  0)
 
-; one living neighbor of 0,0 in world with 0,1 only
+; one living neighbor of 0,0 in world with 1,1 only
 (check-equal?
  (count-neighbors 
   (strings->state (make-point 0 1) (list " x"))
   (make-point 0 0))
  1)
 
+; no living neighbor of 0,0 in world with 2,1 only
 (check-equal?
  (count-neighbors (strings->state (make-point 0 1) (list "  x"))
             (make-point 0 0))
  0)
+
+; two living neighbor of 0,0 in world with 0,1 and 1,1
+(check-equal?
+ (count-neighbors 
+  (strings->state (make-point 0 1) (list "xx"))
+  (make-point 0 0))
+ 2)
+
 
 (check-equal?
  (count-neighbors (strings->state (make-point -1 1) (list "xxx" "x x" "xxx"))
