@@ -36,3 +36,19 @@
   (strings->state (make-point 1 1) (list "x"
                                          "x"
                                          "x")))
+
+(define (southeastward-glider-at x y)
+  (strings->state (make-point x y) (list "x"
+                                         " xx"
+                                         "xx")))
+
+; a "glider" moves 1 diagonal step in 4 iterations
+(check-equal?
+  (next-world-state
+   (next-world-state
+    (next-world-state
+     (next-world-state
+      (southeastward-glider-at 0 0)))))
+  (southeastward-glider-at 1 -1))
+
+  
