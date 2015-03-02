@@ -20,6 +20,9 @@
 (define (make-state list-of-points)
   (list->set list-of-points))
 
+(define (alive-in-world? point world)
+  (set-member? world point))
+
 (define (state-add-point state pt)
   (set-union state (make-state (list pt))))
   
@@ -28,5 +31,6 @@
 
 (provide make-point co-x co-y 
          make-state
+         alive-in-world?
          state-add-point
          )

@@ -46,6 +46,21 @@
   (make-state (list (make-point 0 0))))  
  #t)
 
+(check-equal?
+ (alive-in-world? (make-point 1 2)
+                   (make-state (list (make-point 1 2))))
+ #t)
+
+(check-equal?
+ (alive-in-world? (make-point 1 2)
+                  (make-state '()))
+  #f)
+
+(check-equal?
+ (alive-in-world? (make-point 1 2)
+                  (make-state (list (make-point 2 1))))  
+  #f)
+
 
 (check-equal?
   (make-state (list (make-point 0 0) (make-point 1 2)))
