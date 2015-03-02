@@ -6,5 +6,5 @@ Late February 2015: humble beginnings inspired by a code retreat.
 
 Run all tests, e.g. with 
 
-    $ time for t in test*.rkt;  do echo "test $t"; racket $t; done
+    for t in test/*.rkt;  do echo "test $t"; racket $t; done
 
