@@ -2,8 +2,8 @@
 
 
 (require rackunit
-         "timeLessState.rkt"
-         "stateBounds.rkt"
+         "../src/timeLessState.rkt"
+         "../src/stateBounds.rkt"
          )
 
 ; degenerate rectangle bounds single point

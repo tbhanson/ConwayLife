@@ -1,6 +1,6 @@
 #lang racket
 
-(require "timeLessState.rkt")
+(require "../src/timeLessState.rkt")
 
 (define big-integer 999999999999999)
 (define small-integer (- 0 big-integer))

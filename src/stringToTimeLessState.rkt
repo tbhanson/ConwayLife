@@ -1,6 +1,6 @@
 #lang racket
 
-(require "timeLessState.rkt")
+(require "../src/timeLessState.rkt")
 
 ; we will support a shorthand allowing us to describe states with picture-like lists of strings)
 ; e.g. (0,0) "x."

@@ -1,8 +1,8 @@
 #lang racket
 
-(require          "timeLessState.rkt"
-                  "neighbors.rkt"
-                  "stateBounds.rkt"
+(require          "../src/timeLessState.rkt"
+                  "../src/neighbors.rkt"
+                  "../src/stateBounds.rkt"
 )
 
 (define (cell-alive-next-time? point in-state)

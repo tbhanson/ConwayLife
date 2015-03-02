@@ -1,8 +1,8 @@
 #lang racket
 
 (require plot)
-(require "timeLessState.rkt"
-         "stateBounds.rkt")
+(require "../src/timeLessState.rkt"
+         "../src/stateBounds.rkt")
          
 
 ;(define WINDOW-SIZE 150)

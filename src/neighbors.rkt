@@ -1,6 +1,6 @@
 #lang racket
 
-(require "timeLessState.rkt")
+(require "../src/timeLessState.rkt")
 
 ; in conway's life 2 points are neighbors if one or both coordinates are distance 1 apart
 ; and no coordinate is more than 1 apart

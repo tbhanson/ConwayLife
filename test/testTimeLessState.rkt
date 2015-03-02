@@ -1,7 +1,7 @@
 #lang racket
 
 (require rackunit
-         "timeLessState.rkt")
+         "../src/timeLessState.rkt")
 
 (check-equal?
  (co-x (make-point 1 2))

@@ -1,9 +1,9 @@
 #lang racket
 
 (require rackunit
-         "timeLessState.rkt"
-         "stringToTimeLessState.rkt"
-         "neighbors.rkt")
+         "../src/timeLessState.rkt"
+         "../src/stringToTimeLessState.rkt"
+         "../src/neighbors.rkt")
 
 ; no living neighbors of 0,0 in empty world
 (check-equal?

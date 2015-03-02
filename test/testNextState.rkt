@@ -1,9 +1,9 @@
 #lang racket
 
 (require rackunit
-         "timeLessState.rkt"
-         "stringToTimeLessState.rkt"
-         "nextState.rkt")
+         "../src/timeLessState.rkt"
+         "../src/stringToTimeLessState.rkt"
+         "../src/nextState.rkt")
 
 ; a state with a single point yields an empty state
 (check-equal?

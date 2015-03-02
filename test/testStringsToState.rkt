@@ -1,8 +1,8 @@
 #lang racket
 
 (require rackunit
-         "timeLessState.rkt"
-         "stringToTimeLessState.rkt")
+         "../src/timeLessState.rkt"
+         "../src/stringToTimeLessState.rkt")
 
 (check-equal? 
  (filled-cell-char? #\.)

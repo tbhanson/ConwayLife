@@ -1,6 +1,9 @@
 #lang racket
 
-(require "../euler/eulerBase.rkt")
+(define (assert pred anError)
+  (if (not pred) 
+      (raise anError)
+      #t))
 
 ; we will think of an instantaneous world state as a set of occupied points
 ; each point is a pair (or perhaps a list with 2 items) of signed integers

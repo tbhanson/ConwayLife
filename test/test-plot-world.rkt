@@ -1,10 +1,10 @@
 #lang racket
 
 (require rackunit
-         "timeLessState.rkt"
-         "stringToTimeLessState.rkt"
-         "nextState.rkt"
-         "plot-world.rkt")
+         "../src/timeLessState.rkt"
+         "../src/stringToTimeLessState.rkt"
+         "../src/nextState.rkt"
+         "../src/plot-world.rkt")
 
 (plot-world
    (make-state (list (make-point 0 0))))

@@ -1,8 +1,8 @@
 #lang racket
 
 (require 2htdp/image)
-(require "timeLessState.rkt"
-         "stateBounds.rkt")
+(require "../src/timeLessState.rkt"
+         "../src/stateBounds.rkt")
 
 (define cell-square-size 15)
 (define alive-cell (overlay
@@ -12,11 +12,13 @@
 
 
 (define (world-row->image world row-y lo-x hi-x)
+  ; this helped: http://stackoverflow.com/questions/15040527/how-am-i-supposed-to-create-rows-and-columns-of-images
   (define (row->image row)
     (cond
       [(empty? row) empty-image]
       [else         (beside (first row) 
                             (row->image (rest row)))]))
+  
   (define (iter so-far now-x)
     (if (< now-x lo-x)
         so-far

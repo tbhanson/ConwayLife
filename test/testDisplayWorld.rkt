@@ -1,9 +1,9 @@
 #lang racket
 
 (require rackunit
-         "timeLessState.rkt"
-         "stringToTimeLessState.rkt"
-         "displayWorld.rkt")
+         "../src/timeLessState.rkt"
+         "../src/stringToTimeLessState.rkt"
+         "../src/displayWorld.rkt")
 
 (display-world
    (make-state (list (make-point 0 0))))
