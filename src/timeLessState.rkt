@@ -29,11 +29,19 @@
 (define (state-add-point state pt)
   (set-union state (make-state (list pt))))
   
+(define (merge-worlds w1 w2)
+  (set-union w1 w2))
+
+(define (world-empty? world)
+  (set-empty? world))
             
           
 
-(provide make-point co-x co-y 
-         make-state
-         alive-in-world?
-         state-add-point
-         )
+(provide 
+ assert
+ make-point co-x co-y 
+ make-state
+ alive-in-world?
+ state-add-point
+ world-empty?
+ )
