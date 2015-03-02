@@ -35,6 +35,8 @@
 (define (world-empty? world)
   (set-empty? world))
             
+(define (worlds-equal? w1 w2)
+  (equal? w1 w2))
           
 
 (provide 
@@ -44,4 +46,5 @@
  alive-in-world?
  state-add-point
  world-empty?
+ worlds-equal?
  )
