@@ -4,8 +4,9 @@
          "../src/timeLessState.rkt"
          "../src/worldStateStream.rkt"
          "../src/stringToTimeLessState.rkt"
-         ;"../src/displayWorld.rkt"
          )
+
+; --------finite cases------------
 
 ; empty world stays the same: stream has length 1
 (check-equal?
@@ -29,6 +30,7 @@
   1)
 
 
+; --------infinite cases------------
 
 (define (southeastward-glider-at x y)
   (strings->state (make-point x y) 
@@ -50,3 +52,24 @@
    (southeastward-glider-at 0 0))
   40)
  (southeastward-glider-at 10 -10))
+
+
+;--------------------------test stream-total-bounds
+
+(define (northeastward-glider-at x y)
+  (strings->state (make-point x y) 
+                  (list "xx"
+                        " xx"
+                        "x")))
+
+
+; these 2 gliders should collide, i figure
+(check-equal?
+ (stream-total-bounds
+  (world-state-stream
+   (merge-worlds
+    (southeastward-glider-at 0 10)
+    (northeastward-glider-at 0 -10))))
+ 
+ (cons (make-point 0 -12) (make-point 10 10)))
+
