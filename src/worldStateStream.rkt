@@ -20,15 +20,15 @@
 (define (world-state-bounds stream-of-world-states)
   (stream-map state-bounds stream-of-world-states))
 
-; given a finite stream of world states, return the smallest bounding rectangle enclosing all of them 
-(define (stream-total-bounds finite-stream-of-world-states)
-  (let ((bounds-of-each (world-state-bounds finite-stream-of-world-states)))
-    (if (stream-empty? bounds-of-each)
-        (error "sorry, hard to know what bound to return for an empty stream of states")
-        (let ((bounds-of-first-state (stream-first bounds-of-each)))
-          (stream-fold combine-bounds bounds-of-first-state (stream-rest bounds-of-each))))))
+; given a (finite) list of world states, return the smallest bounding rectangle enclosing all of them 
+(define (state-list-total-bounds finite-stream-of-world-states)
+  (let ((bounds-of-each (stream->list (world-state-bounds finite-stream-of-world-states))))
+    (if (empty? bounds-of-each)
+        (error "sorry, hard to know what bound to return for an empty list of states")
+        (let ((bounds-of-first-state (first bounds-of-each)))
+          (foldl combine-bounds bounds-of-first-state (rest bounds-of-each))))))
 
 (provide
  world-state-stream
  world-state-bounds
- stream-total-bounds)
+ state-list-total-bounds)

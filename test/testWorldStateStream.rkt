@@ -54,7 +54,7 @@
  (southeastward-glider-at 10 -10))
 
 
-;--------------------------test stream-total-bounds
+;--------------------------test state-list-total-bounds
 
 (define (northeastward-glider-at x y)
   (strings->state (make-point x y) 
@@ -65,7 +65,7 @@
 
 ; these 2 gliders should collide, i figure
 (check-equal?
- (stream-total-bounds
+ (state-list-total-bounds
   (world-state-stream
    (merge-worlds
     (southeastward-glider-at 0 10)

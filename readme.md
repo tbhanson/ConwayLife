@@ -8,3 +8,4 @@ Run all tests, e.g. with
 
     for t in test/*.rkt;  do echo "test $t"; racket $t; done
 
+(At the moment the animation tests run about a minute and require you to click their windows closed when they finish.)
