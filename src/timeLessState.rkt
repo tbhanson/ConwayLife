@@ -45,6 +45,7 @@
  make-state
  alive-in-world?
  state-add-point
+ merge-worlds
  world-empty?
  worlds-equal?
  )

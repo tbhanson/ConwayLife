@@ -4,6 +4,9 @@
 (require "../src/timeLessState.rkt"
          "../src/stateBounds.rkt")
 
+; to do or think about:
+; - compute size of cell-squares based on world shown and window size?
+
 (define corner-label-aligning-rectangle-transparency 5)
 (define bounding-coordinate-point-size 15)
 (define cell-square-size 15)
@@ -42,11 +45,19 @@
                            (image-row-list->image (rest image-rows)))]))
 
   (define (corner-label x y1 y2)
-    (above
-     (text (format "(~a, ~a)" x y2) bounding-coordinate-point-size "indigo")
-     (rectangle cell-square-size (* cell-square-size (- y2 y1 1)) 
-                corner-label-aligning-rectangle-transparency "gray")
-     (text (format "(~a, ~a)" x y1) bounding-coordinate-point-size "indigo")))
+    (let ((top-label (text (format "(~a, ~a)" x y2) bounding-coordinate-point-size "indigo"))
+          (bottom-label (text (format "(~a, ~a)" x y1) bounding-coordinate-point-size "indigo")))
+      (let ((label-column-width 
+             (max cell-square-size 
+                  (image-width top-label)
+                  (image-width bottom-label))))
+        
+        (above
+         top-label
+         (rectangle label-column-width (* cell-square-size (- y2 y1 1)) 
+                    corner-label-aligning-rectangle-transparency "gray")
+         bottom-label
+         ))))
        
        
   (let ((plot-bounds (relevant-space world)))

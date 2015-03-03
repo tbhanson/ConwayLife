@@ -28,9 +28,24 @@
                         " xx"
                         "xx")))
 
+(define (northeastward-glider-at x y)
+  (strings->state (make-point x y) 
+                  (list "xx"
+                        " xx"
+                        "x")))
+
 ; southeastward glider moves down and to the right every 4 steps
 (animate-world-state-stream 
  (southeastward-glider-at 0 0)
+ 100 ; max state count
+ 0.25) ; seconds each picture
+
+
+; these 2 gliders should collide, i figure
+(animate-world-state-stream 
+ (merge-worlds
+  (southeastward-glider-at 0 10)
+  (northeastward-glider-at 0 -10))
  100 ; max state count
  0.25) ; seconds each picture
 
