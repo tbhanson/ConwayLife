@@ -6,8 +6,6 @@
          "../src/stringToTimeLessState.rkt"
          )
 
-; to do:
-; - get minimal containing bounds (made square? how?) for whole stream we display, so bounds don't change...
 
 (animate-world-state-stream 
  (make-state (list ))

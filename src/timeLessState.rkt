@@ -20,8 +20,10 @@
   (cdr pt))
 
 
-(define (make-state list-of-points)
-  (list->set list-of-points))
+(define (make-state points)
+  (cond ((set? points) points)
+        ((list? points) (list->set points))
+        (else (error "make-state only works with a list or a set of points"))))
 
 (define (alive-in-world? point world)
   (set-member? world point))

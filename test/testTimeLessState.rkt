@@ -12,36 +12,36 @@
  2)
 
 (check-equal?
- (set-empty? 
+ (world-empty? 
   (make-state '()))
  #t)
 
 (check-equal?
- (equal? 
+ (worlds-equal? 
   (make-state (list (make-point 1 2)))
   (make-state (list (make-point 2 1))))  
  #f)
 
 (check-equal?
- (equal? 
+ (worlds-equal? 
   (make-state (list (make-point 1 2)))
   (make-state (list (make-point 1 2))))  
  #t)
 
 (check-equal?
- (equal? 
+ (worlds-equal? 
   (make-state (list (make-point 1 2) (make-point 0 0)))
   (make-state (list (make-point 0 0) (make-point 1 2))))  
  #t)
 
 (check-equal?
- (equal? 
+ (worlds-equal? 
   (make-state (list (make-point 0 0) (make-point 0 0)))
   (make-state (list (make-point 1 2))))  
  #f)
 
 (check-equal?
- (equal? 
+ (worlds-equal? 
   (make-state (list (make-point 0 0) (make-point 0 0)))
   (make-state (list (make-point 0 0))))  
  #t)
@@ -63,9 +63,11 @@
 
 
 (check-equal?
+ (worlds-equal?
   (make-state (list (make-point 0 0) (make-point 1 2)))
   (state-add-point
    (make-state (list (make-point 0 0)))
    (make-point 1 2)))
+ #t)
 
   

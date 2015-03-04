@@ -63,7 +63,7 @@
                         "x")))
 
 
-; these 2 gliders should collide, i figure
+; these 2 gliders collide and yield 2 squares, i think: finite stream, state-list-total-bounds computable, testable
 (check-equal?
  (state-list-total-bounds
   (world-state-stream
